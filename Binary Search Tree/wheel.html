@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* background and wheel frame */
+        body {
+            background-color: black;
+            padding-top: 100px;
+        }
+        .giant-wheel {
+            position: relative;
+            margin: auto;
+            width: 45vw;
+            height: 45vw;
+            border: 3px solid rgb(0, 255, 51);
+            box-shadow: 0 0 10px rgb(0, 255, 51);
+            border-radius: 50%;
+        }
+        /* wheel edges */
+        .edge {
+            position: absolute;
+            width: 50%;
+            border: 2px solid rgb(194, 150, 255);
+            box-shadow: 0 0 10px rgb(194, 150, 255);
+            top: 50%;
+            left: 50%;
+            transform-origin: 0 50%;
+        }
+        .second.edge {
+            rotate: 45deg;
+        }
+        .third.edge {
+            rotate: 90deg;
+        }
+        .forth.edge {
+            rotate: 135deg;
+        }
+        .fifth.edge {
+            rotate: 180deg;
+        }
+        .sixth.edge {
+            rotate: 225deg;
+        }
+        .seventh.edge {
+            rotate: 270deg;
+        }
+        .eighth.edge {
+            rotate: 315deg
+        }
+        /* wheel capsules */
+        .capsule {
+            position: absolute;
+            width: 25%;
+            height: 10%;
+            top: 50%;
+            left: 100%;
+            background-color: rgb(0, 191, 255);
+            box-shadow: 0 0 10px rgb(0, 191, 255);
+            translate: -50% 0;
+            transform-origin: 50% 0;
+            border-bottom-left-radius: 50%;
+            border-bottom-right-radius: 50%;
+            z-index: 1;
+            animation-direction: reverse;
+        }
+        .first.capsule {
+            top: 50%;
+            left: 100%;
+        }
+        .second.capsule {
+            top: 14.644660940%;
+            left: 85.355339093%;
+        }
+        .third.capsule {
+            top: 0%;
+            left: 50%;
+        }
+        .forth.capsule {
+            top: 14.644660940%;
+            left: 14.644660940%;
+        }
+        .fifth.capsule {
+            top: 50%;
+            left: 0%;
+        }
+        .sixth.capsule {
+            left: 14.644660940%;
+            top: 85.355339093%;
+        }
+        .seventh.capsule {
+            top: 100%;
+            left: 50%;
+        }
+        .eighth.capsule {
+            top: 85.355339093%;
+            left: 85.355339093%;
+        }
+        /* person  */
+        .person {
+            position: relative;
+        }
+        .person > * {
+            position: absolute;
+        }
+        .person > .head {
+            left: 35%;
+            width: 30%;
+            height: 40%;
+            border-radius: 50%;
+        }
+        .person > .body {
+            top: 40%;
+            left: 30%;
+            height: 60%;
+            width: 40%;
+            border-top-left-radius: 20%;
+            border-top-right-radius: 20%;
+        }
+        .person > .hand {
+            width: 50%;
+            height: 15%;
+            border-radius: 10%;
+        }
+        .person > .left.hand {
+            top: 25%;
+            left:35%;
+            transform-origin: bottom left;
+            rotate: 135deg;
+        }
+        .person > .right.hand {
+            top: 40%;
+            left: 65%;
+            transform-origin: top left;
+            rotate: 45deg;
+        }
+        .pink.person > * {
+            background-color: rgb(255, 0, 144);
+            box-shadow: 0 0 10px rgb(255, 0, 144);
+        }
+        .yellow.person > * {
+            background-color: rgb(229, 255, 0);
+            box-shadow: 0 0 10px rgb(229, 255, 0);
+        }
+        .brightorange.person >*  {
+            background-color: coral;
+            box-shadow: 0 0 10px coral;
+        }
+        .brightgreen.person > * {
+            background-color: chartreuse;
+            box-shadow: 0 0 10px chartreuse;
+        }
+        .capsule > .person {
+            position: absolute;
+            top: -100%;
+            height: 100%;
+            width: 50%;
+        }
+        .capsule > .person.second {
+            left: 50%;
+        }
+        /* rotation */
+        .rotating {
+            animation-name: rotate;
+            animation-duration: 5s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+        }
+        @keyframes rotate {
+            from {
+                rotate: 0;
+            }
+            to {
+                rotate: 360deg;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="giant-wheel rotating">
+        <div class="first capsule rotating">
+            <div class="pink person">
+                <div class="head"></div>
+                <div class="body"></div>
+                <div class="left hand"></div>
+                <div class="right hand"></div>
+            </div>
+            <div class="yellow person second">
+                <div class="head"></div>
+                <div class="body"></div>
+                <div class="left hand"></div>
+                <div class="right hand"></div>
+            </div>
+        </div>
+        <div class="first edge"></div>
+        <div class="second capsule rotating"></div>
+        <div class="second edge"></div>
+        <div class="third capsule rotating"></div>
+        <div class="third edge"></div>
+        <div class="forth capsule rotating"></div>
+        <div class="forth edge"></div>
+        <div class="fifth capsule rotating"></div>
+        <div class="fifth edge"></div>
+        <div class="sixth capsule rotating">
+            <div class="brightgreen person">
+                <div class="head"></div>
+                <div class="body"></div>
+                <div class="left hand"></div>
+                <div class="right hand"></div>
+            </div>
+            <div class="brightorange person second">
+                <div class="head"></div>
+                <div class="body"></div>
+                <div class="left hand"></div>
+                <div class="right hand"></div>
+            </div>
+        </div>
+        <div class="sixth edge"></div>
+        <div class="seventh capsule rotating"></div>
+        <div class="seventh edge"></div>
+        <div class="eighth capsule rotating"></div>
+        <div class="eighth edge"></div>
+    </div>
+</body>
+</html>
